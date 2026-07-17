@@ -1006,8 +1006,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
         </div>
       </div>
       <div class="contact-right">
-        <form id="contactForm" onsubmit="return handleSubmit(event)">
-          <div class="form-row">
+       <form action="https://formsubmit.co/balajhussainbhk@gmail.com" method="POST">
+  <div class="form-row">
             <label>Name</label>
             <input type="text" required placeholder="Your name">
           </div>
@@ -1212,19 +1212,7 @@ function buildTicker(){
 buildTicker();
 
 // simple contact form handler (no backend attached)
-function handleSubmit(e){
-  e.preventDefault();
-  const btn = e.target.querySelector('.submit-btn');
-  const original = btn.textContent;
-  btn.textContent = 'Message Sent ✓';
-  btn.style.opacity = '0.7';
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.style.opacity = '1';
-    e.target.reset();
-  }, 2200);
-  return false;
-}
+
 </script>
 </body>
 </html>
