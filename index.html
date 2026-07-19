@@ -281,48 +281,74 @@ nav{
 }
 
 /* ---------- HERO ---------- */
+/* ---------- NEW UPDATED HERO SECTION CODE ---------- */
 .hero{
   position:relative;
   min-height:100vh;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   padding:140px 0 80px;
   z-index:1;
 }
+
+.hero-wrap {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Left side content, right side image */
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
 .hero-eyebrow{
   font-family:var(--font-mono);
   color:var(--lime);
   font-size:13px;letter-spacing:2px;text-transform:uppercase;
   display:flex;align-items:center;gap:10px;
   margin-bottom:24px;
-  opacity:0;animation:fadeUp .8s ease forwards .1s;
+  opacity:0;
+  animation:modernFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
 }
 .hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--lime);}
+
 h1.hero-title{
   font-family:var(--font-display);
-font-size:clamp(72px, 11vw, 170px);
+  font-size:clamp(72px, 11vw, 170px);
   line-height:0.92;
   text-transform:uppercase;
   letter-spacing:-1px;
-  opacity:0;animation:fadeUp .8s ease forwards .25s;
+  opacity:0;
+  animation:modernFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
 }
 h1.hero-title .outline{
   -webkit-text-stroke:1.5px var(--ink);
   color:transparent;
 }
 h1.hero-title .fill{color:var(--lime);}
+
 .hero-sub{
   max-width:650px;
   color:var(--muted);
-  max-width:650px;
   margin-top:28px;
-  opacity:0;animation:fadeUp .8s ease forwards .4s;
+  opacity:0;
+  animation:modernFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
 }
 .hero-sub b{color:var(--ink);font-weight:600;}
+
 .hero-cta-row{
   display:flex;gap:16px;align-items:center;flex-wrap:wrap;
   margin-top:50px;
-  opacity:0;animation:fadeUp .8s ease forwards .55s;
+  opacity:0;
+  animation:modernFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
 }
+
 .btn-primary{
   background:var(--lime);color:#0a0b08;
   font-family:var(--font-mono);font-weight:700;font-size:13px;
@@ -333,6 +359,7 @@ h1.hero-title .fill{color:var(--lime);}
   box-shadow:0 0 0 rgba(200,255,61,0);
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(200,255,61,0.25);}
+
 .btn-ghost{
   font-family:var(--font-mono);font-size:13px;
   color:var(--ink);border:1px solid var(--line);
@@ -341,17 +368,47 @@ h1.hero-title .fill{color:var(--lime);}
 }
 .btn-ghost:hover{border-color:var(--ink);}
 
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(24px);}
+@keyframes modernFadeUp {
+  from{opacity:0;transform:translateY(30px);}
   to{opacity:1;transform:translateY(0);}
 }
 
-/* hero stat row */
+/* Image Parallax Box */
+.hero-image {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 420px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 120%; /* Extra height for scrolling motion */
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Hero Stats Full Width Span */
 .hero-stats{
+  grid-column: 1 / -1;
   display:grid;grid-template-columns:repeat(4,1fr);
   gap:1px;background:var(--line);
   margin-top:90px;border:1px solid var(--line);
-  opacity:0;animation:fadeUp .8s ease forwards .7s;
+  opacity:0;
+  animation:modernFadeUp .8s ease forwards 1s;
 }
 .hero-stats .stat{
   background:var(--bg);
@@ -367,11 +424,8 @@ h1.hero-title .fill{color:var(--lime);}
   font-size:11px;color:var(--muted);text-transform:uppercase;
   letter-spacing:1px;margin-top:6px;
 }
-@media(max-width:700px){
-  .hero-stats{grid-template-columns:repeat(2,1fr);}
-}
 
-/* rank ticker marquee - signature element */
+/* Rank Ticker Marquee */
 .ticker-wrap{
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   overflow:hidden;position:relative;background:var(--bg-alt);
@@ -393,6 +447,20 @@ h1.hero-title .fill{color:var(--lime);}
 }
 .ticker-item .rank{color:var(--lime);font-weight:700;}
 .ticker-item .up{color:#6ee88a;}
+
+/* Responsive Layout */
+@media(max-width:900px){
+  .hero-wrap {
+    grid-template-columns: 1fr;
+  }
+  .image-wrapper {
+    height: 400px;
+  }
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:700px){
+  /* handles edge cases for older viewport rule */
+}
 
 /* ---------- SECTION SHARED ---------- */
 section{position:relative;z-index:1;padding:120px 0;}
@@ -711,21 +779,39 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
 </header>
 
 <!-- HERO -->
+<!-- HERO -->
 <main>
 <section class="hero" id="home">
-  <div class="wrap">
-    <span class="hero-eyebrow">SEO Expert · Based in Pakistan · 4+ Years Experience</span>
-    <h1 class="hero-title">
-      BALAJ<br>
-      HUSSAIN<br>
-      <span class="fill">KHAN</span>
-    </h1>
-    <p class="hero-sub">I turn search rankings into revenue. Over <b>4+ years</b> I've led SEO strategy for brands across <b>Pakistan and international markets</b> — from technical audits to full-funnel organic growth.</p>
-    <div class="hero-cta-row">
-      <a href="#work" class="btn-primary">View My Work →</a>
-      <a href="#contact" class="btn-ghost">Get In Touch</a>
+  <div class="wrap hero-wrap">
+
+    <!-- Left Side: All Text Content -->
+    <div class="hero-content">
+        <span class="hero-eyebrow">
+            SEO Expert · Based in Pakistan · 4+ Years Experience
+        </span>
+
+        <h1 class="hero-title">
+            BALAJ<br>
+            HUSSAIN<br>
+            <span class="fill">KHAN</span>
+        </h1>
+
+        <p class="hero-sub">I turn search rankings into revenue. Over <b>4+ years</b> I've led SEO strategy for brands across <b>Pakistan and international markets</b> — from technical audits to full-funnel organic growth.</p>
+        
+        <div class="hero-cta-row">
+          <a href="#work" class="btn-primary">View My Work →</a>
+          <a href="#contact" class="btn-ghost">Get In Touch</a>
+        </div>
     </div>
 
+    <!-- Right Side: Parallax Image Container -->
+    <div class="hero-image">
+        <div class="image-wrapper">
+            <img src="images/balaj.png" alt="Balaj Hussain Khan" id="parallaxImg">
+        </div>
+    </div>
+
+    <!-- Bottom Stats Layout -->
     <div class="hero-stats reveal stagger">
       <div class="stat">
         <div class="num"><span class="accent">4</span>+</div>
@@ -744,6 +830,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
         <div class="label">SEO Tools Mastered</div>
       </div>
     </div>
+
   </div>
 </section>
 
