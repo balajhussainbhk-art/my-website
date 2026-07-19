@@ -35,6 +35,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://balajhussainkhan.com/#person",
+  "name": "Balaj Hussain Khan",
+  "jobTitle": "SEO Lead",
+  "description": "SEO Expert with 4+ years of experience in technical SEO, on-page optimization, and organic growth strategy, currently serving as SEO Lead at Team Reactivate.",
+  "url": "https://balajhussainkhan.com/",
+  "email": "mailto:balajhussainbhk@gmail.com",
+  "telephone": "+92-311-2468788",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Team Reactivate"
+  },
+  "knowsAbout": [
+    "Search Engine Optimization",
+    "Technical SEO",
+    "On-Page SEO",
+    "Off-Page SEO",
+    "Keyword Research",
+    "Content Strategy",
+    "Google Search Console",
+    "Google Analytics",
+    "Looker Studio",
+    "SEMrush",
+    "Ahrefs",
+    "AI Search Optimization",
+    "Answer Engine Optimization"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PK"
+  }
+}
+</script>
+
 <style>
 :root{
   --bg:#0a0b08;
@@ -256,6 +294,118 @@ h1.hero-title .fill{color:var(--lime);}
   .image-wrapper {height: 400px;}
   .hero-stats{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ---------- SECTION SHARED ---------- */
+section{position:relative;z-index:1;padding:120px 0;}
+@media(max-width:700px){section{padding:80px 0;}}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:56px;flex-wrap:wrap;gap:20px;
+}
+.eyebrow{
+  font-family:var(--font-mono);color:var(--lime);
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:14px;display:block;
+}
+h2.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(32px,5vw,58px);
+  text-transform:uppercase;line-height:0.98;letter-spacing:-0.5px;
+}
+.section-note{max-width:360px;color:var(--muted);font-size:14px;}
+
+/* ---------- ABOUT ---------- */
+.about-grid{
+  display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start;
+}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+.about-visual{
+  position:relative;border:1px solid var(--line);
+  padding:32px;border-radius:16px;background:var(--card);
+  overflow:hidden;
+}
+.serp-mock{
+  background:#0e0f0a;border:1px solid var(--line);border-radius:10px;
+  padding:18px;font-family:var(--font-mono);font-size:12px;
+}
+.serp-search{
+  display:flex;align-items:center;gap:8px;color:var(--muted);
+  border:1px solid var(--line);border-radius:100px;padding:8px 14px;
+  margin-bottom:16px;
+}
+.serp-result{padding:12px 0;border-top:1px dashed var(--line);}
+.serp-result:first-child{border-top:none;}
+.serp-result .pos{color:var(--lime);font-weight:700;margin-right:6px;}
+.serp-result .url{color:var(--blue);font-size:11px;}
+.serp-result .title{color:var(--ink);margin:2px 0;font-size:13px;}
+.serp-result .desc{color:var(--muted);font-size:11px;}
+.about-copy p{color:var(--muted);font-size:16px;margin-bottom:20px;}
+.about-copy p b{color:var(--ink);}
+.about-copy .lede{font-size:20px;color:var(--ink);font-weight:500;margin-bottom:24px;}
+
+/* ---------- TIMELINE ---------- */
+.timeline{border-top:1px solid var(--line);}
+.tl-row{
+  display:grid;grid-template-columns:140px 1fr auto;gap:24px;
+  align-items:center;padding:32px 0;border-bottom:1px solid var(--line);
+  transition:all .3s ease;
+}
+.tl-row:hover{background:rgba(200,255,61,0.03);padding-left:12px;}
+.tl-period{font-family:var(--font-mono);color:var(--lime);font-size:13px;}
+.tl-role h3{font-weight:700;font-size:20px;}
+.tl-role p{color:var(--muted);font-size:14px;}
+.tl-status{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;color:var(--muted);}
+.tl-status.current{color:var(--lime);display:flex;align-items:center;gap:8px;}
+.tl-status.current::before{
+  content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);
+}
+@media(max-width:640px){.tl-row{grid-template-columns:1fr;gap:6px;}}
+
+/* ---------- TOOLS ---------- */
+.tools-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+@media(max-width:900px){...tools-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:560px){.tools-grid{grid-template-columns:repeat(2,1fr);}}
+.tool-card{
+  background:var(--bg);padding:34px 20px;text-align:center;
+  transition:all .3s ease;
+}
+.tool-card:hover{background:var(--card);transform:translateY(-6px);}
+.tool-card .glyph{
+  width:44px;height:44px;margin:0 auto 16px;
+  border:1px solid var(--line);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);color:var(--lime);
+}
+.tool-card .name{font-size:13px;font-weight:600;}
+
+/* ---------- CONTACT ---------- */
+.contact-panel{
+  border:1px solid var(--line);border-radius:20px;
+  display:grid;grid-template-columns:1fr 1.1fr;background:var(--card);
+}
+@media(max-width:860px){.contact-panel{grid-template-columns:1fr;}}
+.contact-left{padding:56px 44px;border-right:1px solid var(--line);}
+.contact-right{padding:56px 44px;}
+.form-row{margin-bottom:20px;}
+.form-row label{display:block;font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-bottom:8px;}
+.form-row input, .form-row textarea{
+  width:100%;background:transparent;border:1px solid var(--line);
+  border-radius:10px;padding:14px 16px;color:var(--ink);
+}
+.form-row input:focus, .form-row textarea:focus{outline:none;border-color:var(--lime);}
+.submit-btn{
+  width:100%;background:var(--lime);color:#0a0b08;border:none;
+  font-family:var(--font-mono);font-weight:700;padding:16px;border-radius:10px;cursor:pointer;
+}
+
+/* ---------- FAQ ---------- */
+.faq-list{border-top:1px solid var(--line);}
+.faq-item{border-bottom:1px solid var(--line);padding:24px 0;}
+.faq-item summary{display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:600;cursor:pointer;}
+.faq-item p{color:var(--muted);font-size:14px;margin-top:14px;}
 </style>
 </head>
 <body>
@@ -267,6 +417,8 @@ h1.hero-title .fill{color:var(--lime);}
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#tools">Tools</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Let's Talk</a>
@@ -276,6 +428,7 @@ h1.hero-title .fill{color:var(--lime);}
 </header>
 
 <main>
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
     <div class="wrap hero-wrap">
       <div class="hero-content">
@@ -289,7 +442,7 @@ h1.hero-title .fill{color:var(--lime);}
 
       <div class="hero-image">
           <div class="image-wrapper">
-              <img src="https://via.placeholder.com/420x500" alt="Balaj Hussain Khan">
+              <img src="images/balaj.png" alt="Balaj Hussain Khan">
           </div>
       </div>
 
@@ -313,6 +466,140 @@ h1.hero-title .fill{color:var(--lime);}
       </div>
     </div>
   </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">01 · About</span>
+          <h2 class="section-title">Ranking Brands<br>That Deserve<br>To Be Found</h2>
+        </div>
+        <p class="section-note">A snapshot of how I approach organic growth — research first, execution second, reporting always.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="serp-mock">
+            <div class="serp-search">🔍 best seo expert pakistan</div>
+            <div class="serp-result">
+              <div><span class="pos">#1</span><span class="url">balajhussainkhan.com</span></div>
+              <div class="title">Balaj Hussain Khan — SEO Lead</div>
+              <div class="desc">4+ years of measurable organic growth across PK & international markets.</div>
+            </div>
+            <div class="serp-result">
+              <div><span class="pos">#2</span><span class="url">teamreactivate.com</span></div>
+              <div class="title">Team Reactivate — SEO Services</div>
+              <div class="desc">Currently leading SEO strategy as SEO Lead.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="lede">I'm an SEO Lead who treats search algorithms as moving targets that can always be outsmarted with solid technical foundations.</p>
+          <p>Whether it's optimizing large-scale platforms or setting up enterprise international structures, I focus heavily on conversions, not just vanity keywords.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">02 · Career Timeline</span>
+          <h2 class="section-title">Professional<br>Experience</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-period">2025 - Present</div>
+          <div class="tl-role">
+            <h3>SEO Lead</h3>
+            <p>Team Reactivate</p>
+          </div>
+          <div class="tl-status current">Active</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Previous Roles</div>
+          <div class="tl-role">
+            <h3>SEO Specialist &amp; Executive</h3>
+            <p>Driving core scaling initiatives across e-commerce & corporate assets.</p>
+          </div>
+          <div class="tl-status">Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS SECTION -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">03 · Toolkit</span>
+          <h2 class="section-title">Core SEO Data<br>Systems</h2>
+        </div>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card"><div class="glyph">GSC</div><div class="name">Search Console</div></div>
+        <div class="tool-card"><div class="glyph">GA4</div><div class="name">Google Analytics</div></div>
+        <div class="tool-card"><div class="glyph">SEM</div><div class="name">SEMrush</div></div>
+        <div class="tool-card"><div class="glyph">AH</div><div class="name">Ahrefs</div></div>
+        <div class="tool-card"><div class="glyph">LS</div><div class="name">Looker Studio</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">04 · Questions</span>
+          <h2 class="section-title">Frequently<br>Asked</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What domains do you specialize in?</summary>
+          <p>I focus on Technical SEO, Local SEO routing setups, complex On-Page content design, and global site scalability frameworks.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div class="contact-left">
+          <h3>Let's Scale Your Traffic</h3>
+          <p>Drop a message to consult on audits, strategy setups, or long-term lead pipeline development.</p>
+        </div>
+        <div class="contact-right">
+          <form action="#">
+            <div class="form-row">
+              <label>Name</label>
+              <input type="text" required>
+            </div>
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" required>
+            </div>
+            <div class="form-row">
+              <label>Message</label>
+              <textarea required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <script>
@@ -320,6 +607,15 @@ h1.hero-title .fill{color:var(--lime);}
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
+  });
+
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('siteHeader');
+    if(window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
 </script>
 </body>
