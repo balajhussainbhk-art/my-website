@@ -685,6 +685,29 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
 
 /* parallax-friendly hero title */
 .hero-title{will-change:transform;}
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 420px 220px;
+align-items:center;
+gap:40px;
+}
+
+.hero-image{
+width:100%;
+max-width:400px;
+border-radius:20px;
+transition:.4s;
+}
+
+.hero-right{
+display:flex;
+flex-direction:column;
+gap:18px;
+font-size:14px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#888;
+}
 </style>
 </head>
 <body>
@@ -693,6 +716,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
 
 <header id="siteHeader">
   <div class="wrap">
+    <div class="hero-grid">
+<div class="hero-left">
     <nav>
       <a href="#home" class="logo"><span>BHK</span><div class="dot"></div></a>
       <ul class="nav-links" id="navLinks">
@@ -745,6 +770,17 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
       </div>
     </div>
   </div>
+  </div>
+<div class="hero-center">
+    <img src="images/balaj.png" alt="Balaj Hussain Khan" class="hero-image">
+</div>
+<div class="hero-right">
+    <span>SEO EXPERT</span>
+    <span>TECHNICAL SEO</span>
+    <span>AI SEO</span>
+    <span>INTERNATIONAL SEO</span>
+</div>
+</div>
 </section>
 
 <!-- TICKER -->
@@ -1052,6 +1088,11 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;}
 <div class="top-btn" id="topBtn">↑</div>
 
 <script>
+  const heroImage=document.querySelector(".hero-image");
+
+window.addEventListener("scroll",()=>{
+heroImage.style.transform=`translateY(${window.scrollY*-0.2}px)`;
+});
 // header scroll state
 const header = document.getElementById('siteHeader');
 const topBtn = document.getElementById('topBtn');
